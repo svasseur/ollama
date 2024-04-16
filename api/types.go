@@ -307,6 +307,8 @@ func (m *Metrics) Summary() {
 	}
 }
 
+var ErrInvalidHostPort = fmt.Errorf("invalid port specified in OLLAMA_HOST")
+
 var ErrInvalidOpts = fmt.Errorf("invalid options")
 
 func (opts *Options) FromMap(m map[string]interface{}) error {
