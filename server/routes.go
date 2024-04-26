@@ -728,12 +728,7 @@ func GetModelInfo(req api.ShowRequest) (*api.ShowResponse, error) {
 		}
 	}
 
-	mf, err := ShowModelfile(model)
-	if err != nil {
-		return nil, err
-	}
-
-	resp.Modelfile = mf
+	resp.Modelfile = parser.Format(model.Commands())
 
 	return resp, nil
 }
